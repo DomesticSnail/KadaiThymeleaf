@@ -11,7 +11,6 @@ public class InputController {
 
     @GetMapping("/input")
     public String getInput(@RequestParam(value = "previous", required = false) String previous, Model model) {
-        // Add the previous value to the model if it's not null
         model.addAttribute("previous", previous);
         return "input";
     }
