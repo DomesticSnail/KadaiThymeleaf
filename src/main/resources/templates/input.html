@@ -2,12 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Tutorial of Thymeleaf</title>
+    <title th:text="#{input.pageTitle}"></title>
 </head>
 <body>
-    <h1>Thymeleaf 課題</h1>
-    <h2>入力画面</h2>
-    <p>値を入力してください。</p>
+    <h1 th:text="#{input.pageTitle}"></h1>
+    <h2 th:text="#{input.formTitle}"></h2>
+    <p th:text="#{input.instruction}"></p>
+
+    <p th:if="${previous != null}" th:text="#{input.previousInput(${previous})}"></p>
+
     <form method="post" action="/output">
         <input type="text" name="val">
         <button type="submit">送信</button>
